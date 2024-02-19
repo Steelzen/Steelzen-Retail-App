@@ -15,8 +15,8 @@ public class ProductService {
         Product product = Product.builder()
                 .name(request.name())
                 .detail(request.detail())
-                .brandId(request.brandId())
-                .categoryId(request.categoryId())
+                .brand(request.brand())
+                .category(request.category())
                 .build();
 
         productRepository.saveAndFlush(product);

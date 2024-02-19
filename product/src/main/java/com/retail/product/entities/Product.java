@@ -1,15 +1,10 @@
 package com.retail.product.entities;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.GenerationType;
 
 @Data
 @Builder
@@ -30,6 +25,12 @@ public class Product {
     private Long id;
     private String name;
     private String detail;
-    private Long brandId;
-    private Integer categoryId;
+
+    @OneToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
+
+    @OneToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 }
