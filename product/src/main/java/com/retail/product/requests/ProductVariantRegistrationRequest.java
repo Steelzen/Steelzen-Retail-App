@@ -5,9 +5,9 @@ import com.retail.product.entities.Product;
 import com.retail.product.entities.Size;
 
 public record ProductVariantRegistrationRequest(
-        Product product,
-        Color color,
-        Size size,
+        Long productId,
+        Long colorId,
+        Long sizeId,
         Double price,
         Integer stock
 ) {
