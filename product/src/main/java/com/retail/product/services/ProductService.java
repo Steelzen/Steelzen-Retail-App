@@ -10,6 +10,8 @@ import com.retail.product.requests.ProductRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ProductService {
@@ -32,4 +34,6 @@ public class ProductService {
 
         productRepository.saveAndFlush(product);
     }
+
+    public List<Product> getProduct () { return this.productRepository.findAll(); }
 }

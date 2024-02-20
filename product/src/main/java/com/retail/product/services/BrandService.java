@@ -6,6 +6,8 @@ import com.retail.product.requests.BrandRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class BrandService {
@@ -18,4 +20,6 @@ public class BrandService {
 
         brandRepository.saveAndFlush(brand);
     }
+
+    public List<Brand> getBrand () { return this.brandRepository.findAll(); }
 }

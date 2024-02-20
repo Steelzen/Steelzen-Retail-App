@@ -6,6 +6,8 @@ import com.retail.product.requests.ColorRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ColorService {
@@ -18,4 +20,7 @@ public class ColorService {
 
         colorRepository.saveAndFlush(color);
     }
+
+    public List<Color> getColor () { return this.colorRepository.findAll(); }
+
 }

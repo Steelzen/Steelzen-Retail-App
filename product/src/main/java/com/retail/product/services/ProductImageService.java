@@ -8,6 +8,8 @@ import com.retail.product.requests.ProductImageRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ProductImageService {
@@ -25,4 +27,6 @@ public class ProductImageService {
 
         productImageRepository.saveAndFlush(productImage);
     }
+
+    public List<ProductImage> getProductImage () { return this.productImageRepository.findAll(); }
 }

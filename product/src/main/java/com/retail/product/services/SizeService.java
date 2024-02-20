@@ -6,6 +6,8 @@ import com.retail.product.requests.SizeRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class SizeService {
@@ -18,4 +20,6 @@ public class SizeService {
 
         sizeRepository.saveAndFlush(size);
     }
+
+    public List<Size> getSize () { return sizeRepository.findAll(); }
 }

@@ -1,13 +1,13 @@
 package com.retail.product;
 
+import com.retail.product.entities.*;
 import com.retail.product.requests.*;
 import com.retail.product.services.*;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -64,4 +64,25 @@ public class ProductController {
         log.info("new product variant registration {}", productVariantRegistrationRequest);
         productVariantService.registerProductVariant(productVariantRegistrationRequest);
     }
+
+    @GetMapping("/brand")
+    public List<Brand> getBrand () { return brandService.getBrand(); }
+
+    @GetMapping("/category")
+    public List<Category> getCategory() { return categoryService.getCategory(); }
+
+    @GetMapping("/color")
+    public List<Color> getColor() { return colorService.getColor(); }
+
+    @GetMapping("/size")
+    public List<Size> getSize() { return sizeService.getSize(); }
+
+    @GetMapping("/product_image")
+    public List<ProductImage> getProductImage() { return productImageService.getProductImage(); }
+
+    @GetMapping("/product")
+    public List<Product> getProduct() { return productService.getProduct(); }
+
+    @GetMapping("/product_variant")
+    public List<ProductVariant> getProductVariant() { return productVariantService.getProductVariant(); }
 }

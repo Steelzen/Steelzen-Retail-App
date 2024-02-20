@@ -6,6 +6,8 @@ import com.retail.product.requests.CategoryRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class CategoryService {
@@ -17,5 +19,9 @@ public class CategoryService {
                 .build();
 
         categoryRepository.saveAndFlush(category);
+    }
+
+    public List<Category> getCategory () {
+        return this.categoryRepository.findAll();
     }
 }

@@ -12,6 +12,8 @@ import com.retail.product.requests.ProductVariantRegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ProductVariantService {
@@ -38,4 +40,6 @@ public class ProductVariantService {
 
         productVariantRepository.saveAndFlush(productVariant);
     }
+
+    public List<ProductVariant> getProductVariant () { return this.productVariantRepository.findAll(); }
 }
