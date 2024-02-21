@@ -1,16 +1,15 @@
-package com.retail.basket;
+package com.retail.session;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication (
         scanBasePackages = {
-                "com.retail.basket",
-                "com.retail.session",
+                "com.retail.session"
         }
 )
-public class BasketApplication {
+public class ProductApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BasketApplication.class, args);
+        SpringApplication.run(ProductApplication.class, args);
     }
 }
