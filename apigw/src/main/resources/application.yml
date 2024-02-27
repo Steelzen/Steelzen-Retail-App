@@ -1,0 +1,30 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: lb://PRODUCT
+          predicates:
+            - Path=/api/v1/production/**
+          filters:
+            - AddResponseHeader=Product-Response, true
+            - AddRequestHeader=Product-Request, true
+
+        - id: basket
+          uri: lb://BASKET
+          predicates:
+            - Path=/api/v1/basket/**
+          filters:
+            - AddResponseHeader=Basket-Response, true
+            - AddRequestHeader=Basket-Request, true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
