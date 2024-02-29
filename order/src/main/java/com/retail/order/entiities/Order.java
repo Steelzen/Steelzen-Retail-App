@@ -1,9 +1,7 @@
 package com.retail.order.entiities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
+import com.retail.customer.entities.Customer;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
+@Table(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
@@ -21,10 +20,10 @@ public class Order {
             sequenceName = "product"
     )
     @GeneratedValue (
-
+            strategy = GenerationType.SEQUENCE,
+            generator = "order_id-S=sequence"
     )
     private Long id;
     private String date;
-
-    //TODO: Customer object
+    private Long customerId;
 }

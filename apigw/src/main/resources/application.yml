@@ -23,7 +23,7 @@ spring:
             - AddRequestHeader=Basket-Request, true
 
         - id: order
-          uri: lb://ORDER
+          uri: lb://ORDERS
           predicates:
             - Path=/api/v1/order/**
           filters:

@@ -2,10 +2,10 @@ server:
   port: 3032
 spring:
   application:
-    name: order
+    name: orders
   datasource:
     password: password
-    url: jdbc:postgresql://localhost:5435/order
+    url: jdbc:postgresql://localhost:5435/orders
     username: steelzen
   jpa:
     hibernate:
