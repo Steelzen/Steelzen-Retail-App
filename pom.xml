@@ -16,6 +16,8 @@
         <module>session</module>
         <module>main</module>
         <module>apigw</module>
+        <module>order</module>
+        <module>customer</module>
     </modules>
 
     <properties>
