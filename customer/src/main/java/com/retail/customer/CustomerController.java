@@ -6,11 +6,14 @@ import com.retail.customer.requests.CustomerRegistrationRequest;
 import com.retail.customer.requests.ReviewRegistrationRequest;
 import com.retail.customer.services.CustomerService;
 import com.retail.customer.services.ReviewService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.query.sqm.EntityTypeException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -39,4 +42,26 @@ public class CustomerController {
 
     @GetMapping("/review")
     public List<Review> getReview() { return reviewService.getReview(); }
+
+    @GetMapping(path = "{customerId}")
+    public Customer getCustomerById(@PathVariable("customerId") Long customerId) throws EntityTypeException {
+        Optional<Customer> customerOptional = customerService.getCustomerById(customerId);
+        if(customerOptional.isPresent()) {
+            return customerOptional.get();
+        }
+        else {
+            throw new EntityNotFoundException("Customer not found with id: " + customerId);
+        }
+    }
+
+    @GetMapping(path = "/review/{reviewId}")
+    public Review getReviewById (@PathVariable("reviewId") Long reviewId) throws EntityTypeException {
+        Optional<Review> reviewOptional = reviewService.getReviewById(reviewId);
+        if(reviewOptional.isPresent()) {
+            return reviewOptional.get();
+        }
+        else {
+            throw new EntityNotFoundException("Review not found with id: " + reviewId);
+        }
+    }
 }

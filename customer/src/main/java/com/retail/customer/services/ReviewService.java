@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -32,4 +33,8 @@ public class ReviewService {
     }
 
     public List<Review> getReview () { return this.reviewRepository.findAll(); }
+
+    public Optional<Review> getReviewById (Long reviewId) {
+        return this.reviewRepository.findById(reviewId);
+    }
 }

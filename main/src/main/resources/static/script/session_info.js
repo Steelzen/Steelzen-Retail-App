@@ -8,5 +8,5 @@ xhttp.onload = function () {
 
 }
 
-xhttp.open("GET", "/api/v1/basket/session_info");
+xhttp.open("GET", "/api/v1/cart/session_info");
 xhttp.send();
