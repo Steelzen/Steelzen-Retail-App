@@ -8,13 +8,515 @@
 </head>
 <body>
   <div>
-    <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
-    </div>
-    <div><h2>Product</h2></div>
-    <div><h2>Order</h2></div>
-    <div><h2>Customer</h2></div>
+    <div><h2>Product</h2>
+      <a class="btn"
+         data-bs-toggle="collapse"
+         href="#productCollapse"
+         role="button" aria-expanded="false"
+         aria-controls="productCollapse">&#9660</a>
+      <div class="collapse" id="productCollapse">
+      <div>
+        <h3>Brand</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productBrandCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productBrandCollapse">&#9660</a>
+        <div class="collapse" id="productBrandCollapse">
+        <div>
+          <div>
+            <h4>Post</h4>
+            <p>Address</p>
+            <p>api/v1/production/brand</p>
+          </div>
+        <form method="post" class="row g-3 needs-validation" novalidate id="brand-registration">
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="brand-name" name="brandName" placeholder="Brand" required>
+            <div class="invalid-feedback">
+              Please provide a valid brand name.
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+        <div>
+        <div>
+          <h4>Get</h4>
+          <p>Address</p>
+          <p>api/v1/production/brand</p>
+        </div>
+        <form class="row g-3 needs-validation" id="brand-get" novalidate >
+         <div class="col-12">
+           <button class="btn btn-primary" type="submit" >Get</button>
+          </div>
+        </form>
+        <div id="brand-all"></div>
+        </div>
+        </div> <!-- productBrandCollapse end-->
+      </div> <!-- product-brand end -->
+      <div>
+        <h3>Category</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productCategoryCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productCategoryCollapse">&#9660</a>
+        <div class="collapse" id="productCategoryCollapse">
+        <div>
+          <div>
+            <h4>Post</h4>
+            <p>Address</p>
+            <p>api/v1/production/category</p>
+          </div>
+          <form method="post" class="row g-3 needs-validation" novalidate id="category-registration">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="category-name" name="categoryName" placeholder="Category" required>
+              <div class="invalid-feedback">
+                Please provide a valid category name.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+          </form>
+        </div>
+        <div>
+        <div>
+          <h4>Get</h4>
+          <p>Address</p>
+          <p>api/v1/production/category</p>
+        </div>
+        <form class="row g-3" id="category-get">
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit" >Get</button>
+          </div>
+        </form>
+        <div id="category-all"></div>
+        </div>
+          </div><!-- productCategoryCollapse end-->
+      </div> <!-- product-category end -->
+      <div>
+        <h3>Color</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productColorCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productColorCollapse">&#9660</a>
+        <div class="collapse" id="productColorCollapse">
+        <div>
+          <div>
+            <h4>Post</h4>
+            <p>Address</p>
+            <p>api/v1/production/color</p>
+          </div>
+          <form method="post" class="row g-3 needs-validation" novalidate id="color-registration">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="color-name" name="colorName" placeholder="Color" required>
+              <div class="invalid-feedback">
+                Please provide a valid color name.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div>
+            <h4>Get</h4>
+            <p>Address</p>
+            <p>api/v1/production/color</p>
+          </div>
+          <form class="row g-3" id="color-get">
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit" >Get</button>
+            </div>
+          </form>
+          <div id="color-all"></div>
+        </div>
+          </div><!--  productColorCollapse end -->
+      </div> <!-- product-color end -->
+      <div>
+        <h3>Size</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productSizeCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productSizeCollapse">&#9660</a>
+        <div class="collapse" id="productSizeCollapse">
+        <div>
+          <div>
+            <h4>Post</h4>
+            <p>Address</p>
+            <p>api/v1/production/size</p>
+          </div>
+          <form method="post" class="row g-3 needs-validation" novalidate id="size-registration">
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="size-name" name="sizeName" placeholder="Size" required>
+              <div class="invalid-feedback">
+                Please provide a valid size name.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Post</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div>
+            <h4>Get</h4>
+            <p>Address</p>
+            <p>api/v1/production/size</p>
+          </div>
+          <form class="row g-3" id="size-get">
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit" >Get</button>
+            </div>
+          </form>
+          <div id="size-all"></div>
+        </div>
+          </div><!-- productSizeCollapse end -->
+      </div> <!-- product-size end -->
+      <div>
+        <h3>Product</h3>
+          <a class="btn"
+             data-bs-toggle="collapse"
+             href="#productProductCollapse"
+             role="button" aria-expanded="false"
+             aria-controls="productProductCollapse">&#9660</a>
+          <div class="collapse" id="productProductCollapse">
+            <div>
+              <div>
+                <h4>Post</h4>
+                <p>Address</p>
+                <p>/api/v1/production/product</p>
+              </div>
+              <form method="post" class="row g-3 needs-validation" novalidate id="product-registration">
+                <div class="col-md-4">
+                  <input type="text" class="form-control" id="product-name" name="productName" placeholder="Product name" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid product name.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="product-detail" name="productDetail" placeholder="Product detail" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid product detail.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="brand-id" name="brandId" placeholder="Brand Id" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid brand id.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="category-id" name="categoryId" placeholder="Category Id" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid category id.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Post</button>
+                </div>
+              </form>
+            </div>
+            <div>
+              <div>
+                <h4>Get</h4>
+                <p>Address</p>
+                <p>/api/v1/production/product/{productId}</p>
+              </div>
+              <form class="row g-3 needs-validation" id="product-get" novalidate >
+                <div class="col-md-4">
+                  <input type="text" class="form-control" id="product-id" name="productId" placeholder="Product ID" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid product id format.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit" >Get</button>
+                </div>
+              </form>
+              <span id="product-by-id"></span>
+            </div>
+          </div> <!-- productProductCollapse end -->
+        </div> <!-- product-product end -->
+      <div>
+        <h3>Product Variant</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productProductVariantCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productProductVariantCollapse">&#9660</a>
+        <div class="collapse" id="productProductVariantCollapse">
+          <div>
+            <div>
+              <h4>Post</h4>
+              <p>Address</p>
+              <p>/api/v1/production/product_variant</p>
+            </div>
+            <form method="post" class="row g-3 needs-validation" novalidate id="product-variant-registration">
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="product-id-in-product-variant" name="productIdInProductVariant" placeholder="Product ID" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product id.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" id="color-id" name="colorId" placeholder="Color Id" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product color.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="size-id" name="sizeId" placeholder="Size Id" required>
+                <div class="invalid-feedback">
+                  Please provide a valid size id.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Price" required>
+                <div class="invalid-feedback">
+                  Please provide a valid price.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" required>
+                <div class="invalid-feedback">
+                  Please provide a valid stock.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Post</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div>
+              <h4>Get</h4>
+              <p>Address</p>
+              <p>/api/v1/production/product_variant/{productVariantId}</p>
+            </div>
+            <form class="row g-3 needs-validation" id="product-variant-get" novalidate >
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="product-variant-id" name="productVariantId" placeholder="Product Variant ID" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product variant id format.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit" >Get</button>
+              </div>
+            </form>
+            <span id="product-variant-by-id"></span>
+          </div>
+        </div> <!-- product-productVariantCollapse end -->
+      </div> <!-- product-productVariant end -->
+      <div>
+        <h3>Image</h3>
+        <a class="btn"
+           data-bs-toggle="collapse"
+           href="#productImgCollapse"
+           role="button" aria-expanded="false"
+           aria-controls="productImgCollapse">&#9660</a>
+        <div class="collapse" id="productImgCollapse">
+          <div>
+            <div>
+              <h4>Post</h4>
+              <p>Address</p>
+              <p>api/v1/production/product_image</p>
+            </div>
+            <form method="post" class="row g-3 needs-validation" novalidate id="image-registration">
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="image-url" name="imageURL" placeholder="Image URL" required>
+                <div class="invalid-feedback">
+                  Please provide a valid image URL.
+                </div>
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="product-variant-id-in-image-post" name="productVariantIdInImagePost" placeholder="Product Variant ID" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product variant id.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">Post</button>
+              </div>
+            </form>
+          </div>
+          <div>
+            <div>
+              <h4>Get</h4>
+              <p>Address</p>
+              <p>api/v1/production/product_image/{productVariantId}</p>
+            </div>
+            <form class="row g-3 needs-validation" id="image-get" novalidate >
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="product-variant-id-in-image-get" name="productVariantIdInImageGet" placeholder="Product Variant ID" required>
+                <div class="invalid-feedback">
+                  Please provide a valid product variant id.
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit" >Get</button>
+              </div>
+            </form>
+            <div id="product-image-all-by-product-variant"></div>
+          </div>
+        </div><!-- productImgCollapse end -->
+      </div> <!-- product-productImg end -->
+      </div> <!-- productCollapse end -->
+    </div> <!-- product end -->
+    <div><h2>Order</h2>
+      <a class="btn"
+         data-bs-toggle="collapse"
+         href="#orderCollapse"
+         role="button" aria-expanded="false"
+         aria-controls="orderCollapse">&#9660</a>
+      <div class="collapse" id="orderCollapse">
+        <p>order form</p>
+      </div><!-- orderCollapse end-->
+    </div> <!-- order end -->
+    <div><h2>Customer</h2>
+      <a class="btn"
+      data-bs-toggle="collapse"
+      href="#customerCollapse"
+      role="button" aria-expanded="false"
+      aria-controls="customerCollapse">&#9660</a>
+      <div class="collapse" id="customerCollapse">
+      <div>
+        <div>
+        <h4>Post</h4>
+        <p>Address</p>
+        <p>/api/v1/customer</p>
+        </div>
+        <form method="post" class="row g-3 needs-validation" novalidate id="customer-registration">
+          <div class="col-md-4">
+            <input type="email" class="form-control" id="customer-email" name="email" placeholder="Email" required>
+            <div class="invalid-feedback">
+              Please provide a valid email format.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="customer-firstname" name="firstName" placeholder="First name" required>
+            <div class="invalid-feedback">
+              Please provide a valid first name.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="customer-lastname" name="lastName" placeholder="Last name" required>
+            <div class="invalid-feedback">
+              Please provide a valid last name.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="customer-phone" name="phone" placeholder="phone" required>
+            <div class="invalid-feedback">
+              Please provide a valid phone number.
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+        <div>
+      <div>
+        <h4>Get</h4>
+        <p>Address</p>
+        <p>/api/v1/customer/{customerId}</p>
+      </div>
+      <form class="row g-3 needs-validation" id="customer-get" novalidate >
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="customer-id" name="customerId" placeholder="Customer ID" required>
+          <div class="invalid-feedback">
+            Please provide a valid customer id format.
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" >Get</button>
+        </div>
+      </form>
+      <span id="customer-by-id"></span>
+        </div>
+      </div> <!-- customerCollapse end -->
+    </div> <!-- customer end -->
+    <div><h2>Review</h2>
+      <a class="btn"
+         data-bs-toggle="collapse"
+         href="#reviewCollapse"
+         role="button" aria-expanded="false"
+         aria-controls="reviewCollapse">&#9660</a>
+      <div class="collapse" id="reviewCollapse">
+      <div>
+        <div>
+          <h4>Post</h4>
+          <p>Address</p>
+          <p>/api/v1/customer/review</p>
+        </div>
+        <form method="post" class="row g-3 needs-validation" novalidate id="review-registration">
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="review-grade" name="grade" placeholder="Grade" required>
+            <div class="invalid-feedback">
+              Please provide a valid grade.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="review-detail" name="detail" placeholder="Comment" required>
+            <div class="invalid-feedback">
+              Please provide a valid text.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <input type="text" class="form-control" id="review-img" name="imgURL" placeholder="Image URL" required>
+            <div class="invalid-feedback">
+              Please provide a valid url.
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="review-product" name="productId" placeholder="Product ID" required>
+              <div class="invalid-feedback">
+                Please provide a valid product id.
+              </div>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" id="review-customer" name="customerId" placeholder="Customer ID" required>
+              <div class="invalid-feedback">
+                Please provide a valid customer id.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Post</button>
+          </div>
+        </form>
+      </div>
+        <div>
+      <div>
+        <h4>Get</h4>
+        <p>Address</p>
+        <p>/api/v1/customer/review/{reviewId}</p>
+      </div>
+      <form class="row g-3 needs-validation" id="review-get" novalidate >
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="review-id" name="reviewId" placeholder="Review ID" required>
+          <div class="invalid-feedback">
+            Please provide a valid review id format.
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" >Get</button>
+        </div>
+      </form>
+      <span id="review-by-id"></span>
+        </div>
+      </div> <!-- reviewCollapse end -->
+    </div> <!-- review end -->
   </div>
+  <script src="script/validation.js"></script>
+  <script src="script/httpRequest.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

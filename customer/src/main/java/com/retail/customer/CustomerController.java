@@ -34,7 +34,6 @@ public class CustomerController {
     public void registerReview(@RequestBody ReviewRegistrationRequest reviewRegistrationRequest) {
         log.info("new review registration {}", reviewRegistrationRequest);
         reviewService.registerReview(reviewRegistrationRequest);
-
     }
 
     @GetMapping

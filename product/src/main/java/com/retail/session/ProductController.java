@@ -3,11 +3,14 @@ package com.retail.session;
 import com.retail.session.entities.*;
 import com.retail.session.requests.*;
 import com.retail.session.services.*;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.query.sqm.EntityTypeException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -60,7 +63,7 @@ public class ProductController {
     }
 
     @PostMapping("/product_variant")
-    public void registerPorductVariant (@RequestBody ProductVariantRegistrationRequest productVariantRegistrationRequest) {
+    public void registerProductVariant(@RequestBody ProductVariantRegistrationRequest productVariantRegistrationRequest) {
         log.info("new product variant registration {}", productVariantRegistrationRequest);
         productVariantService.registerProductVariant(productVariantRegistrationRequest);
     }
@@ -80,9 +83,36 @@ public class ProductController {
     @GetMapping("/product_image")
     public List<ProductImage> getProductImage() { return productImageService.getProductImage(); }
 
+    @GetMapping("/product_image/{productVariantId}")
+    public List<ProductImage> getProductImageByProductVariantId(@PathVariable("productVariantId") Long productVariantId) {
+        return productImageService.getProductImageByProductVariantId(productVariantId);
+    }
+
     @GetMapping("/product")
     public List<Product> getProduct() { return productService.getProduct(); }
 
+    @GetMapping("/product/{productId}")
+    public Product getProductById(@PathVariable("productId") Long productId) throws EntityTypeException {
+        Optional<Product> productOptional = productService.getProductById(productId);
+        if(productOptional.isPresent()) {
+            return productOptional.get();
+        }
+        else {
+            throw new EntityNotFoundException("Product not found with id: " + productId);
+        }
+    }
+
     @GetMapping("/product_variant")
     public List<ProductVariant> getProductVariant() { return productVariantService.getProductVariant(); }
+
+    @GetMapping("/product_variant/{productVariantId}")
+    public ProductVariant getProductVariantById(@PathVariable("productVariantId") Long productVariantId) throws EntityTypeException {
+        Optional<ProductVariant> productVariantOptional = productVariantService.getProductVariantById(productVariantId);
+        if(productVariantOptional.isPresent()) {
+            return productVariantOptional.get();
+        }
+         else {
+             throw new EntityNotFoundException("Product variant not found with id: " + productVariantId);
+        }
+    }
 }

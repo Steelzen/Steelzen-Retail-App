@@ -13,6 +13,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -42,4 +43,8 @@ public class ProductVariantService {
     }
 
     public List<ProductVariant> getProductVariant () { return this.productVariantRepository.findAll(); }
+
+    public Optional<ProductVariant> getProductVariantById (Long productVariantId) {
+        return this.productVariantRepository.findById(productVariantId);
+    }
 }

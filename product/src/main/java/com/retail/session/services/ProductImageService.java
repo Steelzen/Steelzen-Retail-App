@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -29,4 +30,8 @@ public class ProductImageService {
     }
 
     public List<ProductImage> getProductImage () { return this.productImageRepository.findAll(); }
+
+    public List<ProductImage> getProductImageByProductVariantId (Long productVariantId) {
+        return this.productImageRepository.findProductImageByProductVariantId(productVariantId);
+    }
 }
